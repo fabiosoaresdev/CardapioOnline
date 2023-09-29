@@ -72,7 +72,7 @@ a.navbar-brand {
     margin-left: 30px;
 }
 
-.btn-white:hover{
+.btn-white:hover {
     background-color: var(--color-primary);
     transition: 0.5s;
 }
@@ -81,7 +81,7 @@ a.navbar-brand {
     padding-right: 75px;
 }
 
-.btn-icon .icon{
+.btn-icon .icon {
     display: inline-block;
     color: var(--color-black);
     background-color: var(--color-primary);
@@ -140,13 +140,14 @@ a.navbar-brand {
     margin-left: 30px;
 }
 
-.social{
+.social {
     margin-top: -40px;
 }
 
-.btn-ver-cardapio{
+.btn-ver-cardapio {
     margin-left: 10px;
 }
+
 .btn-yellow:hover {
     background-color: var(--color-black);
     color: var(--color-primary)!important;
@@ -171,19 +172,19 @@ a.navbar-brand {
     padding-top: 6px;
 }
 
-.btn-icon-left:hover .icon-left{
+.btn-icon-left:hover .icon-left {
     color: var(--color-black);
     background-color: var(--color-white);
     transition: 0.5s;
 }
 
-.btn-social{
+.btn-social {
     color: var(--color-black)!important;
     margin-left: 10px;
     margin-top: 10px;
 }
 
-.btn-social:hover i{
+.btn-social:hover i {
     width: 50px; 
     align-items: center;
     transform: 0.5s;
@@ -215,11 +216,11 @@ a.navbar-brand {
     border: none !important;
 }
 
-.card p{
+.card p {
     margin: 5px;
 }
 
-.card-case{
+.card-case {
     width: 350px;
     font-size: 14px;
     position: absolute;
@@ -227,10 +228,75 @@ a.navbar-brand {
     left: 230px;
 }
 
-.card-case-name{
+.card-case-name {
     color: var(--color-primary);
     position: absolute;
     font-size: 12px;
     right: 20px;
     bottom: 5px;
+}
+
+/* Estilização Section Serviços */
+.background-servicos {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(/img/bg-icons-2.png);
+}
+
+.servicos {
+    margin-top: -130px;
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.hint-title {
+    text-transform: uppercase;
+    color: var(--color-primary);
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.title {
+    color: var(--color-black);
+}
+
+.card-icon {
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-text {
+    color: var(--color-text-out);
+    font-size: 15px;
+    padding: 0px 30px;
+}
+
+.card-text p {
+    font-size: 22px;
+    color: var(--color-black);
+    margin-bottom: 10px;
+}
+
+/*  Estilização Cardápio  */
+.background-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(/img/bg-icons-1.png);
+}
+
+.cardapio {
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.container-menu {
+    margin-bottom: 40px;
 }
