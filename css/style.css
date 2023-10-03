@@ -22,7 +22,7 @@
     --color-text: #4f4f4f;
     --color-text-out: #90908e;
     --color-primary: #ffbf00;
-    --color-secondary: #fff2cc;
+    --color-secondary: #f5dc90;
     --color-white: #ffffff;
     --color-red: #e74c3c;
     --color-green: #2ecc71;
@@ -71,6 +71,7 @@ a.navbar-brand {
     font-size: 20px;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
     margin-left: 30px;
+    transition: 0.5s;
 }
 
 .btn-white.active, .btn-white:hover {
@@ -294,7 +295,7 @@ a.navbar-brand {
     background-image: url(/img/bg-icons-1.png);
 }
 
-.cardapio {
+.menu {
     padding-top: 30px;
     padding-bottom: 150px;
 }
@@ -421,4 +422,44 @@ a.navbar-brand {
     display: flex;
     margin-top: -5px;
     transition: 1s;
+}
+
+/* Depoimentos */
+
+.depoimentos {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.card-depoimentos {
+    height: 390px;
+    width: 390px;
+    border-radius: 120px;
+    background-color: var(--color-secondary);
+    position: absolute;
+    left: 0;
+    top: -80px;
+}
+
+.container-dados-depoimento {
+    display: flex;
+}
+
+.depoimento {
+    margin-top: 70px;
+}
+
+.imagem-depoimento {
+    width: 65px;
+    height: 65px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 15px;
+}
+
+#depoimento-1 .imagem-depoimento{
+    background-image: url(/img/diego.jpg);
+    background-size: cover;
 }
