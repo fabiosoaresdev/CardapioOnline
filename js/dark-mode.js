@@ -1,7 +1,8 @@
 const btnDarkMode = document.getElementById('btnDarkMode');
 const icon = btnDarkMode.querySelector('i');
 const body = document.querySelector('body');
-const logoElement = document.getElementById('logo-cabecalho');
+const logoElementCabecalho = document.getElementById('logo-cabecalho');
+const logoElementFooter = document.querySelector('.logo-footer'); // Seleciona o logo do footer
 
 let modoEscuroAtivo = body.classList.contains('dark');
 
@@ -20,11 +21,18 @@ btnDarkMode.addEventListener('click', function() {
         modoEscuroAtivo = true;
     }
     
-    // Alterando o logo com base no modo atual
+    // Alterando o logo do cabeçalho com base no modo atual
     const isDarkMode = body.classList.contains('dark');
     if (isDarkMode) {
-        logoElement.src = 'img/logo-dark.png';
+        logoElementCabecalho.src = 'img/logo-dark.png';
     } else {
-        logoElement.src = 'img/logo.png';
+        logoElementCabecalho.src = 'img/logo.png';
+    }
+
+    // Alterando o logo do footer com base no modo atual
+    if (isDarkMode) {
+        logoElementFooter.src = 'img/logo-dark.png';
+    } else {
+        logoElementFooter.src = 'img/logo.png';
     }
 });

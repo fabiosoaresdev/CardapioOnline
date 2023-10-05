@@ -21,6 +21,7 @@
     --color-black-heavy: #000;
     --color-text: #4f4f4f;
     --color-text-out: #90908e;
+    --color-float-dark: #575757;
     --color-text-dark: #cacaca;
     --color-primary: #ffbf00;
     --color-secondary: #fff2cc;
@@ -37,6 +38,8 @@ html, body {
     color: var(--color-text);  
     transition: 1.5s;
 }
+
+
 
 select {
     height: 60px !important;
@@ -571,8 +574,8 @@ a.navbar-brand {
 
 /* Footer */
 
-footer {
-    background-color: var(--color-secondary);
+.dark footer {
+    background-color: var(--color-black-heavy);
 }
 
 .logo-footer {
@@ -622,40 +625,37 @@ footer {
     flex-direction: column;
 }
 
-.modal-full::-webkit-scrollbar {
-    width: 6px;
-    background: var(--color-scrollbar-background);
+.no-scroll {
+   overflow-y: hidden; 
 }
 
-.modal-full::-webkit-scrollbar-thumb {
-    background: var(--color-scrollbar);
-}
-
-.modal-full::-webkit-scrollbar-track {
-    background-color: var(--color-scrollbar-background);
-}
-
-/* **************************************************************************************************** */
-
-.m-header {
+.modal-header {
     padding-bottom: 20px;
 }
 
-.m-body {
+.modal-body {
     flex: 1;
     overflow: auto;
     overflow-x: hidden;
 }
 
-.m-body::-webkit-scrollbar-thumb {
-    background: var(--color-white);
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+    background: none;
 }
 
-.m-body::-webkit-scrollbar-track {
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: var(--color-black);
+}
+
+
+.modal-body::-webkit-scrollbar-track {
     background: transparent;
 }
-
-/* **************************************************************************************************** */
 
 .etapas {
     display: flex;
@@ -942,3 +942,4 @@ body.dark {
     background-color: var(--color-white);
     transition: 1.5s;
 }
+
