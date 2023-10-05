@@ -21,18 +21,21 @@
     --color-black-heavy: #000;
     --color-text: #4f4f4f;
     --color-text-out: #90908e;
+    --color-text-dark: #cacaca;
     --color-primary: #ffbf00;
     --color-secondary: #fff2cc;
     --color-white: #ffffff;
     --color-red: #e74c3c;
     --color-green: #2ecc71;
     --color-separate: #cccccc;
+    --color-red-hot: #ff0000;
 }
 
 html, body {
     font-family: 'PoppinsRegular', 'Rubik', sans-serif;
     background-color: var(--color-background);
     color: var(--color-text);  
+    transition: 1.5s;
 }
 
 select {
@@ -61,6 +64,12 @@ a.navbar-brand {
     color: var(--color-black)!important;
     padding-left: 35px!important;
     padding-right: 35px!important;
+    transition: 1.5s;
+}
+
+.nav-link:hover {
+    color: var(--color-primary)!important;
+    transition: none;
 }
 
 .btn-white {
@@ -124,12 +133,14 @@ a.navbar-brand {
 .text-banner h1 {
     color: var(--color-black);
     font-size: 60px;
+    transition: 1.5s;
 }
 
 .text-banner p {
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 20px;
+    transition: 1.5s;
 }
 
 .btn-yellow {
@@ -339,7 +350,7 @@ a.navbar-brand {
     white-space: nowrap;
     height: 40px;
     margin-bottom: 0px;
-    font-size: 24px;
+    font-size: 20px;
     transition: 1s;
 }
 
@@ -528,6 +539,10 @@ a.navbar-brand {
     padding-bottom: 150px;
 }
 
+.title-container-reserva {
+    color: var(--color-black);
+}
+
 .card-secondary {
     background-color: var(--color-secondary);
     border-radius: 70px;
@@ -585,4 +600,328 @@ footer {
 .container-redes-footer .btn-social{
     margin-left: -5px;
     transition: 1s;
+}
+
+/******/
+
+/*Modal*/
+
+/*Modal Carrinho*/
+.modal-full {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 50px;
+    background: var(--color-white);
+    z-index: 9900;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-header {
+    padding-bottom: 20px;
+}
+
+.m-body {
+    flex: 1;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.m-body::-webkit-scrollbar-thumb {
+    background: var(--color-white);
+}
+
+.m-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.etapas {
+    display: flex;
+}
+
+.etapa {
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-white);
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.etapa::before {
+    content: '';
+    width: 20px;
+    background-color: var(--color-separate);
+    position: absolute;
+    height: 2px;
+    margin-left: 55px;
+}
+
+.etapa:last-child::before {
+    content: none;
+}
+
+.etapa .active, .etapa.active::before{
+    background-color: var(--color-primary);
+}
+
+.title-carrinho {
+    font-size: 20px;
+    color: var(--color-black);
+}
+
+.modal-full .item-carrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-separate);
+}
+
+.modal-full .item-carrinho:last-child {
+    border-bottom: none;
+}
+
+.modal-full .img-produto img {
+    width: 100px;
+    border-radius: 11px;
+}
+
+.modal-full .title-produto {
+    color: var(--color-black);
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.modal-full .price-produto {
+    color: var(--color-primary);
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.modal-full .dados-produto {
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.modal-full .add-carrinho {
+    display: flex;
+    text-align: center;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-remove {
+    border: 2px solid var(--color-red);
+    font-size: 16px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: var(--color-white);
+    background-color: var(--color-red);
+    margin-left: 15px;
+}
+/*****/
+/*Modal Endereço*/
+
+.form-control{
+    background-color: var(--color-white);
+    color: var(--color-black) !important;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 20px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    border: none !important;
+}
+
+.container-cep .form-control{
+    padding-right: 75px;
+}
+
+.container-cep .btn {
+    position: absolute;
+    right: 25px;
+    top: 38px;
+}
+
+/*****/
+/*Modal Resumo*/
+.img-carrinho-resumo img{
+    width: 50px;
+    border-radius: 11px;
+}
+
+.item-carrinho-resumo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.title-produto-resumo {
+    color: var(--color-black);
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.price-produto-resumo {
+    color: var(--color-primary);
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.quantidade-produto-resumo {
+    color: var(--color-black);
+    font-size: 20px;
+}
+
+.img-map {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+}
+
+.texto-endereco {
+    margin-bottom: 0;
+    color: var(--color-black);
+}
+
+.cidade-endereco {
+    margin-bottom: 0;
+}
+/*****/
+/*****/
+
+/*Modal Footer*/
+
+.container-total {
+    padding-top: 20px;
+    border-top: 1px solid var(--color-separate);
+}
+
+.container-total .texto-entrega {
+    color:var(--color-separate);
+}
+
+.container-total .texto-total {
+    color: var(--color-black);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.container-total .valor-total {
+    color: var(--color-primary);
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+/* MODO DARK */
+body.dark {
+    background-color: var(--color-black); 
+    transition: 1.5s;
+}
+
+.dark .nav-link {
+    color: var(--color-white)!important;
+    transition: 1.5s;
+}
+
+.dark .nav-link:hover {
+    color: var(--color-primary)!important;
+    transition: none;
+}
+
+.dark .title {
+    color: var(--color-white);
+    transition: 1.5s;
+}
+
+.dark .text-banner h1 {
+    color: var(--color-background);
+    transition: 1.5s;
+}
+
+.dark .text-banner p {
+    color: var(--color-text-dark);
+    transition: 1.5s;
+}
+
+.dark .card-text {
+    color: var(--color-text-dark);
+    transition: 1.5;
+}
+
+.dark .card-text p {
+    color: var(--color-white);
+    transition: 1.5;
+}
+
+.dark .nome-depoimento {
+    color: var(--color-white);
+    transition: 1.5s;
+}
+
+.dark .texto-depoimento {
+    color: var(--color-white);
+    transition: 1.5s;
+}
+
+.modal-full {
+    background-color: var(--color-black);
+}
+
+.title-carrinho {
+    color: var(--color-white);
+    transition: 1.5s;
+}
+
+.dados-produto .title-produto {
+    color: var(--color-white);
+    transition: 1.5s;
+}
+
+.container-total .texto-entrega {
+    color:var(--color-text-dark);
+    transition: 1.5s;
+}
+
+.container-total .texto-total {
+    color: var(--color-white);
+    transition: 1.5s;
+}
+
+.btn-mais{
+    background-color: var(--color-white);
+    transition: 1.5s;
+}
+
+.btn-menos{
+    background-color: var(--color-white);
+    transition: 1.5s;
+}
+
+.add-numero-de-itens {
+    background-color: var(--color-white);
+    transition: 1.5s;
 }

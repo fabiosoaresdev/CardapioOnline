@@ -7,8 +7,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/style.css">    
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
 </head>
@@ -33,7 +32,7 @@
                     </ul>
                     <a href="#" class="btn btn-white btn-icon">Meu Carrinho <span class="icon"><i class="fas fa-shopping-bag"></i></span></a>                    
                 </div>
-                <button class="btn btn-yellow"><i class="fas fa-cloud-sun"></i></button>
+                <button class="btn btn-yellow" id="btnDarkMode"><i class="fas fa-cloud-sun"></i></button>
             </nav>
         </div>
     </header>
@@ -158,7 +157,7 @@
                                 <div class="img-produto">
                                     <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
                                 </div>
-                                <p class="title-produto text-center mt-4"><strong>Nome</strong></p>
+                                <p class="title-produto text-center mt-4"><strong>Nome do produto</strong></p>
                                 <p class="preco-produto text-center"><strong>R$154,90</strong></p>
                                 <div class="add-carrinho">
                                     <span class="btn-menos"><i class="fas fa-minus"></i></span>
@@ -261,6 +260,7 @@
             </div>
         </div>
     </section>
+    
     <section class="reserva" id="reserva">
         <div class="container">
             <div class="row">
@@ -269,7 +269,7 @@
                         <div class="row">
                             <div class="col-7">
                                 <span class="hint-title"><strong>Reserva</strong></span>
-                                <h1 class="title"><strong>Quer reservar um horário?</strong></h1>
+                                <h1 class="title-container-reserva"><strong>Quer reservar um horário?</strong></h1>
                                 <p class="pr-5">Mande uma mensagem clicando no botão abaixo! Reserve sua data e horário de forma simples e rápida.</p>
                                  <a href="#" class="btn btn-yellow mt-4 btn-ver-cardapio">
                                 Ver cardápio
@@ -308,11 +308,73 @@
         </div>
     </footer>
 
+    <div class="modal-full hidden" id="modal-carrinho">
+        <div class="modal-header">
+            <div class="container">
+                <a href="#" class="btn btn-white btn-sm float-right">Fechar</a>
+                <div class="etapas">
+                    <div class="etapa etapa-1 active">1</div>
+                    <div class="etapa etapa-2">2</div>
+                    <div class="etapa etapa-3">3</div>
+                </div>
+                <p class="title-carrinho mt-4"><strong>Seu Carrinho</strong></p>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <div class="row mr-0 ml-0" id="itens-carrinho">
+                    <div class="col-12 item-carrinho">
+                        <div class="img-produto">
+                            <img src="img/cardapio/bebidas/chickpea-chiller-kit-for-6.4310765c71ba524b5462ea9330d32446.jpg" alt="produto">
+                        </div>
+                        <div class="dados-produto">
+                            <p class="title-produto"><strong>Nome do produto</strong></p>
+                            <p class="price-produto"><strong>R$19,99</strong></p>
+                        </div>
+                        <div class="add-carrinho">
+                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
+                            <span class="add-numero-de-itens">0</span>
+                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
+                            <span class="btn btn-remove"><i class="fas fa-times"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mr-0 ml-0 hidden" id="local-entrega"></div>
+
+                <div class="row mr-0 ml-0 hidden" id="resumo-carrinho"></div>
+            </div>
+        </div>
+        <div class="m-footer">
+            <div class="container">
+                <div class="container-total text-right mb-4">
+                    <p class="mb-0">
+                        <span>Subtotal:</span>
+                        <span id="lblSubTotal">R$200</span>
+                    </p>
+                    <p class="mb-0 texto-entrega">
+                        <span><i class="fas fa-motorcycle"></i> Entrega:</span>
+                        <span id="lblValorEntrega">+ R$5,00</span>
+                    </p>
+                    <p class="mb-0 texto-total">
+                        <span><strong>Total:</strong></span>
+                        <span class="valor-total" id="lblValorTotal"><strong>R$205,00</strong></span>
+                    </p>
+                </div>
+                <a class="btn btn-yellow float-right" id="btnEtapaPedido">Continuar</a>
+                <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereço">Revisar Pedido</a>
+                <a class="btn btn-yellow float-right hidden" id="btnEtapaResumo">Enviar Pedido</a>
+                <a class="btn btn-white float-right mr-3 hidden id="btnVoltar">Voltar</a>
+            </div>
+        </div>
+    </div>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/modernizr-3.5.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/dados.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/dark-mode.js"></script>
 </body>
 </html>
