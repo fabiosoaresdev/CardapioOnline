@@ -1,22 +1,30 @@
 const btnDarkMode = document.getElementById('btnDarkMode');
 const icon = btnDarkMode.querySelector('i');
 const body = document.querySelector('body');
+const logoElement = document.getElementById('logo-cabecalho');
 
-let modoEscuroAtivo = body.classList.contains('dark'); // Alterado de const para let
+let modoEscuroAtivo = body.classList.contains('dark');
 
 btnDarkMode.addEventListener('click', function() {
+    // Alterando a classe 'dark' do corpo para alternar entre os modos
+    body.classList.toggle('dark');
+    
+    // Alterando o ícone com base no modo atual
     if (modoEscuroAtivo) {
-        body.classList.remove('dark');
-        icon.classList.remove('fa-cloud-moon'); // Removendo a classe 'fa-cloud-moon' do ícone
-        icon.classList.add('fa-cloud-sun'); // Adicionando a classe 'fa-cloud-sun' ao ícone
+        icon.classList.remove('fa-cloud-moon');
+        icon.classList.add('fa-cloud-sun');
         modoEscuroAtivo = false;
     } else {
-        body.classList.add('dark');
-        icon.classList.remove('fa-cloud-sun'); // Removendo a classe 'fa-cloud-sun' do ícone
-        icon.classList.add('fa-cloud-moon'); // Adicionando a classe 'fa-cloud-moon' ao ícone
+        icon.classList.remove('fa-cloud-sun');
+        icon.classList.add('fa-cloud-moon');
         modoEscuroAtivo = true;
     }
+    
+    // Alterando o logo com base no modo atual
+    const isDarkMode = body.classList.contains('dark');
+    if (isDarkMode) {
+        logoElement.src = 'img/logo-dark.png';
+    } else {
+        logoElement.src = 'img/logo.png';
+    }
 });
-
-
-

@@ -622,6 +622,21 @@ footer {
     flex-direction: column;
 }
 
+.modal-full::-webkit-scrollbar {
+    width: 6px;
+    background: var(--color-scrollbar-background);
+}
+
+.modal-full::-webkit-scrollbar-thumb {
+    background: var(--color-scrollbar);
+}
+
+.modal-full::-webkit-scrollbar-track {
+    background-color: var(--color-scrollbar-background);
+}
+
+/* **************************************************************************************************** */
+
 .m-header {
     padding-bottom: 20px;
 }
@@ -639,6 +654,8 @@ footer {
 .m-body::-webkit-scrollbar-track {
     background: transparent;
 }
+
+/* **************************************************************************************************** */
 
 .etapas {
     display: flex;
@@ -887,26 +904,26 @@ body.dark {
     transition: 1.5s;
 }
 
-.modal-full {
+.dark .modal-full {
     background-color: var(--color-black);
 }
 
-.title-carrinho {
+.dark .title-carrinho {
     color: var(--color-white);
     transition: 1.5s;
 }
 
-.dados-produto .title-produto {
+.dark .dados-produto .title-produto {
     color: var(--color-white);
     transition: 1.5s;
 }
 
-.container-total .texto-entrega {
+.dark .container-total .texto-entrega {
     color:var(--color-text-dark);
     transition: 1.5s;
 }
 
-.container-total .texto-total {
+.dark .container-total .texto-total {
     color: var(--color-white);
     transition: 1.5s;
 }
