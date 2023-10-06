@@ -334,7 +334,7 @@ a.navbar-brand {
 
 /* ITENS DO CARDÁPIO */
 
-.card-item{
+.card-item {
     height: 360px;
     margin-top: -25px;
     transition: 1s;
@@ -383,6 +383,11 @@ a.navbar-brand {
     transition: 0.5s;
 }
 
+.btn-menos:hover {
+    color: var(--color-red-hot);
+    transition: -5s;
+}
+
 .btn-mais{
     color: var(--color-black-heavy);
     padding: 5px 7px;
@@ -392,6 +397,11 @@ a.navbar-brand {
     font-size: 14px;
     cursor: pointer;
     transition: 0.5s;
+}
+
+.btn-mais:hover {
+    color: var(--color-primary);
+    transition: -5s;
 }
 
 .add-numero-de-itens {
@@ -574,8 +584,8 @@ a.navbar-brand {
 
 /* Footer */
 
-.dark footer {
-    background-color: var(--color-black-heavy);
+footer {
+    background-color: var(--color-secondary);
 }
 
 .logo-footer {
@@ -605,56 +615,32 @@ a.navbar-brand {
     transition: 1s;
 }
 
-/******/
+/************************************************************* MODAL *************************************************************/
 
-/*Modal*/
-
-/*Modal Carrinho*/
 .modal-full {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
+    right: 0;
     padding: 50px;
     background: var(--color-white);
-    z-index: 9900;
+    z-index: 9990;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
+/* MODAL HEADER */
 
-.no-scroll {
-   overflow-y: hidden; 
+.m-header {
+    margin-top: -40px;
 }
 
-.modal-header {
-    padding-bottom: 20px;
-}
-
-.modal-body {
+.m-body {
     flex: 1;
     overflow: auto;
     overflow-x: hidden;
-}
-
-.modal-body::-webkit-scrollbar {
-    width: 6px;
-    background: none;
-}
-
-.modal-body::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
-}
-
-.modal-body::-webkit-scrollbar-track {
-    background: var(--color-black);
-}
-
-
-.modal-body::-webkit-scrollbar-track {
-    background: transparent;
 }
 
 .etapas {
@@ -666,7 +652,7 @@ a.navbar-brand {
     height: 35px;
     background-color: var(--color-white);
     border-radius: 50px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.8);
     color: var(--color-black);
     display: flex;
     justify-content: center;
@@ -680,20 +666,34 @@ a.navbar-brand {
     background-color: var(--color-separate);
     position: absolute;
     height: 2px;
-    margin-left: 55px;
+    margin-right: 55px;
 }
 
-.etapa:last-child::before {
+.etapa:first-child::before {
     content: none;
 }
 
-.etapa .active, .etapa.active::before{
+.etapa.active, .etapa.active:before {
     background-color: var(--color-primary);
 }
 
-.title-carrinho {
-    font-size: 20px;
-    color: var(--color-black);
+/* MODAL BODY */
+
+.m-body {
+    margin-top: -5px;
+}
+
+.m-body::-webkit-scrollbar {
+    width: 6px;
+    background: none;
+}
+
+.m-body::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+.m-body::-webkit-scrollbar-track {
+    background-color: none;
 }
 
 .modal-full .item-carrinho {
@@ -743,46 +743,92 @@ a.navbar-brand {
     align-items: center;
 }
 
+.modal-full .add-carrinho .btn-menos:hover {
+    color: var(--color-red-hot);
+}
+
+.modal-full .add-carrinho .btn-mais:hover {
+    color: var(--color-primary);
+}
+
 .btn-remove {
-    border: 2px solid var(--color-red);
+    border: 2px solid var(--color-black);
     font-size: 16px;
     padding: 4px 10px;
-    border-radius: 10px;
     color: var(--color-white);
     background-color: var(--color-red);
     margin-left: 15px;
+    border-radius: 15px;
 }
-/*****/
-/*Modal Endereço*/
 
-.form-control{
+.btn-remove:hover {
+    background-color: var(--color-red-hot);
+    border: 3px solid var(--color-black-heavy);
+    font-size: 17px;
+    
+}
+
+/* FORM GROUP */
+
+.form-control {
     background-color: var(--color-white);
     color: var(--color-black) !important;
     border-radius: 20px;
     padding: 15px 25px;
     font-size: 20px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8) !important;
     border: none !important;
+    margin-top: -5px;
 }
 
-.container-cep .form-control{
+select.form-control {
+    height: 60px !important;
+}
+
+.container-cep .form-control {
     padding-right: 75px;
 }
 
-.container-cep .btn {
+.container-cep .btn-yellow-find {
     position: absolute;
-    right: 25px;
-    top: 38px;
+    background-color: var(--color-primary);
+    color: var(--color-black)!important;
+    border-radius:15px;
+    font-size: 18px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+    margin-left: 30px;
+    right: 24px;
+    top: 31px;
+    padding: 10px 15px;
 }
 
-/*****/
-/*Modal Resumo*/
-.img-carrinho-resumo img{
+.btn-yellow-find:hover{
+    background-color: var(--color-black-heavy);
+    color: var(--color-primary) !important;
+    transition: 0.5s;
+}
+
+select::-webkit-scrollbar {
+    width: 6px;
+    background: none;
+}
+
+select::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+select::-webkit-scrollbar-track {
+    background-color: none;
+}
+
+/* MODAL RESUMO */
+
+.img-carrinho-resumo img {
     width: 50px;
     border-radius: 11px;
 }
 
-.item-carrinho-resumo {
+.item-carrinho .resumo {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -794,7 +840,7 @@ a.navbar-brand {
     white-space: nowrap;
     overflow: hidden;
     margin-bottom: 0;
-}
+} 
 
 .price-produto-resumo {
     color: var(--color-primary);
@@ -805,6 +851,7 @@ a.navbar-brand {
 .quantidade-produto-resumo {
     color: var(--color-black);
     font-size: 20px;
+    margin-bottom: 0;
 }
 
 .img-map {
@@ -827,24 +874,23 @@ a.navbar-brand {
 .cidade-endereco {
     margin-bottom: 0;
 }
-/*****/
-/*****/
 
-/*Modal Footer*/
+/* MODAL FOOTER */
 
-.container-total {
-    padding-top: 20px;
+.m-footer {
+    padding-top: 10px;
     border-top: 1px solid var(--color-separate);
 }
 
 .container-total .texto-entrega {
-    color:var(--color-separate);
+    color: var(--color-separate);
+    margin-bottom: -10px !important;
 }
 
-.container-total .texto-total {
+.container-total .texto-total{
     color: var(--color-black);
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .container-total .valor-total {
@@ -852,6 +898,12 @@ a.navbar-brand {
     font-size: 24px;
     margin-bottom: 0;
 }
+
+.btn-float-modal {
+    margin-top: -25px !important;
+    margin-bottom: -35px;
+}
+
 
 /* MODO DARK */
 body.dark {
@@ -902,6 +954,10 @@ body.dark {
 .dark .texto-depoimento {
     color: var(--color-white);
     transition: 1.5s;
+}
+
+.dark footer {
+    background-color: var(--color-black-heavy);
 }
 
 .dark .modal-full {
