@@ -1,8 +1,8 @@
 const btnDarkMode = document.getElementById('btnDarkMode');
 const icon = btnDarkMode.querySelector('i');
 const body = document.querySelector('body');
-const logoElementCabecalho = document.getElementById('logo-cabecalho');
-const logoElementFooter = document.querySelector('.logo-footer'); // Seleciona o logo do footer
+const logoSite = document.getElementById('logoSite');
+const logoSiteFooter = document.getElementById('logoSiteFooter'); // Adicione esta linha para selecionar o elemento do rodapé
 
 let modoEscuroAtivo = body.classList.contains('dark');
 
@@ -20,19 +20,13 @@ btnDarkMode.addEventListener('click', function() {
         icon.classList.add('fa-cloud-moon');
         modoEscuroAtivo = true;
     }
-    
-    // Alterando o logo do cabeçalho com base no modo atual
-    const isDarkMode = body.classList.contains('dark');
-    if (isDarkMode) {
-        logoElementCabecalho.src = 'img/logo-dark.png';
-    } else {
-        logoElementCabecalho.src = 'img/logo.png';
-    }
 
-    // Alterando o logo do footer com base no modo atual
-    if (isDarkMode) {
-        logoElementFooter.src = 'img/logo-dark.png';
+    // Alterando a imagem do elemento com ID 'logoSite' com base no modo atual
+    if (modoEscuroAtivo) {
+        logoSite.src = '/img/logo-dark.png';
+        logoSiteFooter.src = '/img/logo-dark.png'; // Altera a imagem do rodapé para logo-dark.png
     } else {
-        logoElementFooter.src = 'img/logo.png';
+        logoSite.src = '/img/logo.png';
+        logoSiteFooter.src = '/img/logo.png'; // Altera a imagem do rodapé para logo.png
     }
 });

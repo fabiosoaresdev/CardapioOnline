@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 var cardapio = {};
 
+var MEU_CARRINHO = [];
 cardapio.eventos = {
  init: () => {
     cardapio.metodos.obterItensCardapio()
@@ -11,14 +12,17 @@ cardapio.eventos = {
 }
 
 cardapio.metodos = {
-
     //Obtem a lista de Itens do cardapio
     obterItensCardapio: (categoria = 'burgers', vermais = false) => {
-
+        
         let filtro = MENU[categoria];
         console.log(filtro)
+        
+        if(!vermais) {
+            $("#itensCardapio").html('')
 
-       $("#itensCardapio").html('')
+        }
+
        $("#btnVerMais").removeClass('hidden')
 
         $.each(filtro, (i, e) => {
@@ -37,25 +41,81 @@ cardapio.metodos = {
             if(!vermais && i < 8) {
                 $('#itensCardapio').append(temp)
             }
-            
-
         })
 
         // remove o ativo
         $(".container-menu a").removeClass('active');
-
         // seta o menu para ativo
         $("#menu-" + categoria).addClass('active')
     },
+
+    // clique no botão ver mais
+    verMais: () => {
+        var ativo = $(".container-menu a.active").attr('id').split('menu-')[1];
+        cardapio.metodos.obterItensCardapio(ativo, true)
+        $("#btnVerMais").addClass('hidden');
+    },
+
+    // diminuir a quantidade do ítem no cardápio.
+    diminuirQuantidade: (id) => {
+        let qntdAtual = parseInt($("#qntd-" + id).text());
+
+        if (qntdAtual > 0) {
+            $("#qntd-" + id).text(qntdAtual - 1)
+        }
+    },
+
+    // aumentar a quantidade de ítem no cardápio.
+    aumentarQuantidade: (id) => {
+        let qntdAtual = parseInt($("#qntd-" + id).text());
+        $("#qntd-" + id).text(qntdAtual + 1)
+    },
+
+    //Adicionar ao Carrinho o item do cardapio
+    adicionarAoCarrinho: (id) => {
+        
+        let qntdAtual = parseInt($("#qntd-" + id).text());
+
+        if (qntdAtual > 0) {
+            //obter a categoria ativa
+            var categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
+
+            //obter a lista de itens
+            let filtro = MENU[categoria];
+
+            //obter o item
+            let item = $.grep(filtro, (e,i) => {return e.id == id});
+
+            if (item.length > 0) {
+                
+                //valida se já existe item no carrinho
+                let existe = $.grep(MEU_CARRINHO, (elem,index) => {return elem.id == id})
+
+                // caso já exista, só altera a quantidade
+                if (existe.length > 0) {
+
+                    let objIndex = MEU_CARRINHO.findIndex((obj=> obj.id == id))
+                    MEU_CARRINHO[objIndex].qntd = MEU_CARRINHO[objIndex].qntd + qntdAtual;
+                }
+
+                // caso ainda não exista o item no carrinho, adiciona ele
+                else {
+                    item[0].qntd = qntdAtual;
+                    MEU_CARRINHO.push(item[0]);
+                }
+
+
+                $("#qntd-" + id).text(0)
+            }
+        }
+    }
 }
 
 cardapio.templates = {
 
     item: `
     <div class="col-3 mb-5">
-
         <div class="card card-item" id="\${id}">
-
             <div class="img-produto">
                 <img src="\${img}" alt="#">
             </div>

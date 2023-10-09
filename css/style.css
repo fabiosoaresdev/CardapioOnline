@@ -28,6 +28,7 @@
     --color-white: #ffffff;
     --color-red: #e74c3c;
     --color-green: #2ecc71;
+    --color-add-cart: #00ff00;
     --color-separate: #cccccc;
     --color-red-hot: #ff0000;
 }
@@ -403,7 +404,7 @@ a.navbar-brand {
 }
 
 .btn-mais:hover {
-    color: var(--color-primary);
+    color: var(--color-red-hot);
     transition: -5s;
 }
 
@@ -426,6 +427,13 @@ a.navbar-brand {
     background-color: var(--color-black-heavy);
     margin-left: 15px;
     transition: 0.5s;
+}
+
+.btn-add:hover {
+    background-color: var(--color-add-cart);
+    color: var(--color-black-heavy);
+    font-size: 22px;
+    border: 3px solid var(--color-black-heavy);
 }
 
 .card-item:hover {
