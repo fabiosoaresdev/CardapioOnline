@@ -351,6 +351,7 @@ a.navbar-brand {
     color: var(--color-black);
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
     height: 40px;
     margin-bottom: 0px;
     font-size: 20px;
@@ -374,6 +375,7 @@ a.navbar-brand {
 
 .btn-menos{
     color: var(--color-black-heavy);
+    background-color: var(--color-white);
     padding: 5px 7px;
     border: 2px solid var(--color-black-heavy);
     border-top-left-radius: 10px;
@@ -390,6 +392,7 @@ a.navbar-brand {
 
 .btn-mais{
     color: var(--color-black-heavy);
+    background-color: var(--color-white);
     padding: 5px 7px;
     border: 2px solid var(--color-black-heavy);
     border-top-right-radius: 10px;
@@ -404,8 +407,9 @@ a.navbar-brand {
     transition: -5s;
 }
 
-.add-numero-de-itens {
-   color: var(--color-black-heavy);
+.add-numero-de-itens{
+    color: var(--color-black-heavy);
+    background-color: var(--color-white);
     padding: 2px 15px;
     border-top: 2px solid var(--color-black-heavy);
     border-bottom: 2px solid var(--color-black-heavy);
@@ -981,21 +985,6 @@ body.dark {
 
 .dark .container-total .texto-total {
     color: var(--color-white);
-    transition: 1.5s;
-}
-
-.btn-mais{
-    background-color: var(--color-white);
-    transition: 1.5s;
-}
-
-.btn-menos{
-    background-color: var(--color-white);
-    transition: 1.5s;
-}
-
-.add-numero-de-itens {
-    background-color: var(--color-white);
     transition: 1.5s;
 }
 

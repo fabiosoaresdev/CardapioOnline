@@ -16,7 +16,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg pl-0 pr-0">
                 <a href="#" class="navbar-brand">
-                    <img src="img/logo.png" alt="logo" width="160px" class="img-logo" id="logo-cabecalho">
+                    <img src="img/logo.png" alt="logo" width="160px" class="img-logo" id="logoCabecalho">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNavDropdown">
                     <span class="navbar-toggler-icon">
@@ -130,45 +130,29 @@
                 <h1 class="title"><strong>Conheça Nosso Cardápio.</strong></h1>
             </div>
                 <div class="col-12 container-menu">
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active">
+                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
                         <i class="fas fa-hamburger"></i> Burguers
                     </a>
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3">
+                    <a id="menu-pizzas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
                         <i class="fas fa-pizza-slice icon-menu"></i> Pizzas
                     </a>
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3">
+                    <a id="menu-churrasco" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('churrasco')">
                         <i class="fas fa-drumstick-bite icon-menu"></i> Churrasco
                     </a>
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3">
+                    <a id="menu-steaks" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('steaks')">
                         <i class="fas fa-bacon"></i> Steaks
                     </a>
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3">
+                    <a id="menu-bebidas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('bebidas')">
                         <i class="fas fa-cocktail"></i> Bebidas
                     </a>
-
-                    <a id="menu-burgers" class="btn btn-white btn-sm mr-3">
+                    <a id="menu-sobremesas" class="btn btn-white btn-sm mr-3" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
                         <i class="fas fa-ice-cream"></i> Sobremesas
                     </a>
                 </div>
                 <div class="col-12">
-                    <div class="row" id="itens-cardapio">
-                        <div class="col-3 mb-5">
-                            <div class="card card-item">
-                                <div class="img-produto">
-                                    <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                                </div>
-                                <p class="title-produto text-center mt-4"><strong>Nome do produto</strong></p>
-                                <p class="preco-produto text-center"><strong>R$154,90</strong></p>
-                                <div class="add-carrinho">
-                                    <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                                    <span class="add-numero-de-itens">0</span>
-                                    <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                                    <span class="btn btn-add"><i class="fas fa-shopping-bag"></i></span>
-                                </div>
-                            </div>
-
-                            
-                        </div>
+                    <div class="row" id="itensCardapio">
+                        
+                        
                     </div>
                 </div>
                 <div class="col-12 text-center">
@@ -190,7 +174,7 @@
                     <span class="hint-title"><strong>Depoimentos</strong></span>
                     <h1 class="title">O que dizem sobre nós?</h1>
                     <div class="mb-5">
-                        <div class="depoimento" id="depoimento-1">
+                        <div class="depoimento" id="depoimento1">
                             <div class="container-dados-depoimento">
                                 <div class="imagem-depoimento"></div>
                                 <div>
@@ -211,7 +195,7 @@
                             </p>
                         </div>
 
-                        <div class="depoimento hidden" id="depoimento-2">
+                        <div class="depoimento hidden" id="depoimento2">
                             <div class="container-dados-depoimento">
                                 <div class="imagem-depoimento"></div>
                                 <div>
@@ -232,7 +216,7 @@
                             </p>
                         </div>
 
-                        <div class="depoimento hidden" id="depoimento-3">
+                        <div class="depoimento hidden" id="depoimento3">
                             <div class="container-dados-depoimento">
                                 <div class="imagem-depoimento"></div>
                                 <div>
@@ -308,7 +292,7 @@
         </div>
     </footer>
 
-    <div class="modal-full hidden" id="modal-carrinho">
+    <div class="modal-full hidden" id="modalCarrinho">
         
         <div class="m-header">
             <div class="container">
@@ -424,7 +408,7 @@
 
             </div>
 
-            <div class="row mr-0 ml-0" id="resumo-carrinho">
+            <div class="row mr-0 ml-0" id="resumoCarrinho">
                 <div class="col-12">
                     <p class="title-carrinho mt-4">
                         <strong>Itens Carrinho</strong>
@@ -551,12 +535,12 @@
         </div>
     </div>
 
-    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/modernizr-3.5.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/dados.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/dark-mode.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
