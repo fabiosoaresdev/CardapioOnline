@@ -755,14 +755,6 @@ footer {
     align-items: center;
 }
 
-.modal-full .add-carrinho .btn-menos:hover {
-    color: var(--color-red-hot);
-}
-
-.modal-full .add-carrinho .btn-mais:hover {
-    color: var(--color-primary);
-}
-
 .btn-remove {
     border: 2px solid var(--color-black);
     font-size: 16px;
@@ -978,23 +970,28 @@ body.dark {
 
 .dark .title-carrinho {
     color: var(--color-white);
-    transition: 1.5s;
 }
 
 .dark .dados-produto .title-produto {
     color: var(--color-white);
-    transition: 1.5s;
 }
 
 .dark .container-total .texto-entrega {
     color:var(--color-text-dark);
-    transition: 1.5s;
+}
+
+.dark .container-total p{
+    color: var(--color-text-dark);
 }
 
 .dark .container-total .texto-total {
     color: var(--color-white);
-    transition: 1.5s;
 }
+
+.dark .form-group label {
+    color: var(--color-white);
+}
+
 
 .badge-total-carrinho {
     width: 25px;

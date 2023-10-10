@@ -268,7 +268,7 @@
                                 <span class="hint-title"><strong>Reserva</strong></span>
                                 <h1 class="title-container-reserva"><strong>Quer reservar um horário?</strong></h1>
                                 <p class="pr-5">Mande uma mensagem clicando no botão abaixo! Reserve sua data e horário de forma simples e rápida.</p>
-                                 <a href="#" class="btn btn-yellow mt-4 btn-ver-cardapio">
+                                 <a href="#cardapio" class="btn btn-yellow mt-4 btn-ver-cardapio">
                                 Ver cardápio
                             </a>
                             </div>
@@ -309,7 +309,7 @@
         
         <div class="m-header">
             <div class="container">
-                <a class="btn btn-white btn-sm float-right">
+                <a class="btn btn-white btn-sm float-right" id="btnFechar" onclick="cardapio.metodos.abrirCarrinho(false)">
                     Fechar
                 </a>
                 <div class="etapas">
@@ -323,7 +323,7 @@
         </div>
         
         <div class="m-body">
-            <div class="row itensCarrinho mr-0 ml-0 hidden">
+            <div class="row itensCarrinho mr-0 ml-0 hidden" id="itensCarrinho">
                 <div class="col-12 item-carrinho">
                     <div class="img-produto">
                         <img src="img/cardapio/bebidas/chickpea-chiller-kit-for-6.4310765c71ba524b5462ea9330d32446.jpg">
@@ -342,7 +342,7 @@
 
             </div>
 
-            <div class="row localEntrega mr-0 ml-0 hidden">
+            <div class="row localEntrega mr-0 ml-0 hidden" id="localEntrega">
                 <div class="col-4">
                     <div class="form-group container-cep">
                         <label>CEP</label>
@@ -421,7 +421,7 @@
 
             </div>
 
-            <div class="row mr-0 ml-0" id="resumoCarrinho">
+            <div class="row mr-0 ml-0 hidden" id="resumoCarrinho">
                 <div class="col-12">
                     <p class="title-carrinho mt-4">
                         <strong>Itens Carrinho</strong>
@@ -446,56 +446,7 @@
                             </p>
                         </div>
 
-                        <div class="col-12 item-carrinho resumo">
-                            <div class="img-carrinho-resumo">
-                                <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                            </div>
-                            <div class="dados-produto">
-                                <p class="title-produto-resumo">
-                                    <strong>Nome do Produto</strong>
-                                </p>
-                                <p class="price-produto-resumo">
-                                    <strong>R$220,00</strong>
-                                </p>
-                            </div>
-                            <p class="quantidade-produto-resumo">
-                                x <strong>3</strong>
-                            </p>
-                        </div>
-
-                        <div class="col-12 item-carrinho resumo">
-                            <div class="img-carrinho-resumo">
-                                <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                            </div>
-                            <div class="dados-produto">
-                                <p class="title-produto-resumo">
-                                    <strong>Nome do Produto</strong>
-                                </p>
-                                <p class="price-produto-resumo">
-                                    <strong>R$220,00</strong>
-                                </p>
-                            </div>
-                            <p class="quantidade-produto-resumo">
-                                x <strong>3</strong>
-                            </p>
-                        </div>
-
-                        <div class="col-12 item-carrinho resumo">
-                            <div class="img-carrinho-resumo">
-                                <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                            </div>
-                            <div class="dados-produto">
-                                <p class="title-produto-resumo">
-                                    <strong>Nome do Produto</strong>
-                                </p>
-                                <p class="price-produto-resumo">
-                                    <strong>R$220,00</strong>
-                                </p>
-                            </div>
-                            <p class="quantidade-produto-resumo">
-                                x <strong>3</strong>
-                            </p>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-12">
@@ -509,10 +460,10 @@
                     </div>
                     <div class="dados-produto">
                         <p class="texto-endereco">
-                            <strong id="resumoEndereco">Rua Mrio Costa, 20, Nova Cabralia</strong>
+                            <strong id="resumoEndereco">Rua dos pelados, 20, Salgadeira</strong>
                         </p>
                         <p class="cidade-endereço" id="cidadeEndereco">
-                            Cidade-Ba / 45807000
+                            Santo Antônio de Jesus-Ba / 44444-272
                         </p>
                     </div>
                 </div>
@@ -537,13 +488,13 @@
                         <span class="valor-total" id="lblValorTotal"><strong>R$ 205,00</strong></span>
                     </p>
                 </div>
-                <a class="btn btn-yellow float-right btn-float-modal" id="btnEtapaPedido">Continuar</a>
+                <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right btn-float-modal" id="btnEtapaPedido">Continuar</a>
                 
-                <a class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaEndereco">Revisar pedido</a>
+                <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaEndereco">Revisar pedido</a>
                 
-                <a class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaResumo">Enviar Pedido</a>
+                <a  class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaResumo">Enviar Pedido</a>
 
-                <a class="btn btn-white float-right btn-float-modal hidden" id="btnVoltar">Voltar</a>
+                <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right btn-float-modal hidden" id="btnVoltar">Voltar</a>
             </div>
         </div>
     </div>
