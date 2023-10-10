@@ -507,17 +507,17 @@ a.navbar-brand {
     margin-right: 15px;
 }
 
-#depoimento-1 .imagem-depoimento{
+#depoimento1 .imagem-depoimento{
     background-image: url(../img/diego.jpg);
     background-size: cover;
 }
 
-#depoimento-2 .imagem-depoimento{
+#depoimento2 .imagem-depoimento{
     background-image: url(../img/ana.jpg);
     background-size: cover;
 }
 
-#depoimento-3 .imagem-depoimento{
+#depoimen3 .imagem-depoimento{
     background-image: url(../img/joao.jpg);
     background-size: cover;
 }
@@ -996,3 +996,94 @@ body.dark {
     transition: 1.5s;
 }
 
+.badge-total-carrinho {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: var(--color-red-hot);
+    color: var(--color-white);
+    border-radius: 50px;
+    right: -5px;
+    top: -5px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: 1.5s;
+}
+
+.botao-carrinho {
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    padding: 30px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8);
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 1.5s;
+}
+
+.botao-carrinho .fa{
+    color: var(--color-black-heavy)!important;
+}
+
+.botao-carrinho:hover {
+    background-color: var(--color-black);
+    transition: 1.5s;
+    font-size: 50px;
+    height: 80px;
+    width: 80px;
+    transition: 1.5s;
+}
+
+.botao-carrinho:hover .fa{
+    color: var(--color-primary)!important;
+    transition: 1.5s;
+}
+
+.botao-carrinho:hover .badge-total-carrinho{
+    font-size: 20px;
+    transition: 1.5s;
+}
+
+.container-mensagens{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    color: var(--color-white);
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.toast {
+    transition: opacity 1s ease-in-out;
+}
+
+.toast.fade-out {
+    opacity: 0;
+}
+
+.toast.red {
+    background-color: var(--color-red);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8);
+}
+
+.toast.green {
+    background-color: var(--color-green);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.8);
+}
