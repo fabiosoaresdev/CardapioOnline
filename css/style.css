@@ -430,7 +430,7 @@ a.navbar-brand {
 }
 
 .btn-add:hover {
-    background-color: var(--color-add-cart);
+    background-color: var(--color-primary);
     color: var(--color-black-heavy);
     font-size: 22px;
     border: 3px solid var(--color-black-heavy);
@@ -507,17 +507,17 @@ a.navbar-brand {
     margin-right: 15px;
 }
 
-#depoimento-1 .imagem-depoimento{
+#depoimento1 .imagem-depoimento{
     background-image: url(../img/diego.jpg);
     background-size: cover;
 }
 
-#depoimento-2 .imagem-depoimento{
+#depoimento2 .imagem-depoimento{
     background-image: url(../img/ana.jpg);
     background-size: cover;
 }
 
-#depoimento-3 .imagem-depoimento{
+#depoimento3 .imagem-depoimento{
     background-image: url(../img/joao.jpg);
     background-size: cover;
 }
@@ -961,6 +961,10 @@ body.dark {
 .dark .nome-depoimento {
     color: var(--color-white);
     transition: 1.5s;
+}
+
+.dark .nome-depoimento span {
+    color: var(--color-background);
 }
 
 .dark .texto-depoimento {
