@@ -333,7 +333,7 @@
                     <div class="form-group container-cep">
                         <label>CEP</label>
                         <input type="text" id="txtCEP" class="form-control">
-                        <a class="btn btn-yellow-find btn-sm"><i class="fas fa-search"></i></a>
+                        <a class="btn btn-yellow-find btn-sm" onclick="cardapio.metodos.buscarCEP()"><i class="fas fa-search"></i></a>
                     </div>
                 </div>
                 <div class="col-8"></div>
@@ -341,7 +341,7 @@
                 <div class="col-6">
                     <div class="form-group">
                         <label>Endereço</label>
-                        <input type="text" id="txtEndereço" class="form-control">
+                        <input type="text" id="txtEndereco" class="form-control">
                     </div>
                 </div>
                 <div class="col-4">
@@ -414,26 +414,7 @@
                     </p>
                 </div>
                 <div class="col-12">
-                    <div class="row" id="listaItensResumo">
-                        <div class="col-12 item-carrinho resumo">
-                            <div class="img-carrinho-resumo">
-                                <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
-                            </div>
-                            <div class="dados-produto">
-                                <p class="title-produto-resumo">
-                                    <strong>Nome do Produto</strong>
-                                </p>
-                                <p class="price-produto-resumo">
-                                    <strong>R$220,00</strong>
-                                </p>
-                            </div>
-                            <p class="quantidade-produto-resumo">
-                                x <strong>3</strong>
-                            </p>
-                        </div>
-
-                        
-                    </div>
+                    <div class="row" id="listaItensResumo"></div>
                 </div>
                 <div class="col-12">
                     <p class="title-carrinho mt-4">
@@ -446,11 +427,9 @@
                     </div>
                     <div class="dados-produto">
                         <p class="texto-endereco">
-                            <strong id="resumoEndereco">Rua dos pelados, 20, Salgadeira</strong>
+                            <strong id="resumoEndereco"></strong>
                         </p>
-                        <p class="cidade-endereço" id="cidadeEndereco">
-                            Santo Antônio de Jesus-Ba / 44444-272
-                        </p>
+                        <p class="cidade-endereço" id="cidadeEndereco"></p>
                     </div>
                 </div>
             </div>
@@ -474,9 +453,9 @@
                         <span class="valor-total"><strong id="lblValorTotal">R$ 0,00</strong></span>
                     </p>
                 </div>
-                <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right btn-float-modal" id="btnEtapaPedido">Continuar</a>
+                <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right btn-float-modal" id="btnEtapaPedido">Continuar</a>
                 
-                <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaEndereco">Revisar pedido</a>
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaEndereco">Revisar pedido</a>
                 
                 <a  class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaResumo">Enviar Pedido</a>
 
