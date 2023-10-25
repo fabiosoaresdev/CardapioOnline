@@ -61,7 +61,7 @@
                             <a href="#cardapio" class="btn btn-yellow mt-4 mr-3 btn-ver-cardapio">
                                 Ver cardápio
                             </a>
-                            <a href="" class="btn btn-white btn-icon-left mt-4">
+                            <a href="#" class="btn btn-white btn-icon-left mt-4" id="btnLigar">
                                 <span class="icon-left">
                                     <i class="fas fa-phone"></i>
                                 </span>
@@ -72,7 +72,7 @@
                     <div class="social">
                         <a href="" class="btn btn-sm btn-white btn-social mt-4 mr-3"><i class="fab fa-instagram"></i></a>
                         <a href="" class="btn btn-sm btn-white btn-social mt-4 mr-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="" class="btn btn-sm btn-white btn-social mt-4"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="btn btn-sm btn-white btn-social mt-4"><i class="fab fa-whatsapp" id="btnWhatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-6">
@@ -250,9 +250,9 @@
                             </p>
                         </div>
                     </div>
-                    <a href="" class="btn btn-sm btn-white btn-social active mr-3">1</a>
-                    <a href="" class="btn btn-sm btn-white btn-social mr-3">2</a>
-                    <a href="" class="btn btn-sm btn-white btn-social">3</a>
+                    <a class="btn btn-sm btn-white btn-social active mr-3" id="btnDepoimento1" onclick="cardapio.metodos.abrirDepoimento(1)">1</a>
+                    <a class="btn btn-sm btn-white btn-social mr-3" id="btnDepoimento2" onclick="cardapio.metodos.abrirDepoimento(2)">2</a>
+                    <a class="btn btn-sm btn-white btn-social" id="btnDepoimento3" onclick="cardapio.metodos.abrirDepoimento(3)">3</a>
                 </div>
             </div>
         </div>
@@ -268,8 +268,8 @@
                                 <span class="hint-title"><strong>Reserva</strong></span>
                                 <h1 class="title-container-reserva"><strong>Quer reservar um horário?</strong></h1>
                                 <p class="pr-5">Mande uma mensagem clicando no botão abaixo! Reserve sua data e horário de forma simples e rápida.</p>
-                                 <a href="#cardapio" class="btn btn-yellow mt-4 btn-ver-cardapio">
-                                Ver cardápio
+                                 <a href="#" class="btn btn-yellow mt-4 btn-ver-cardapio" id="btnReserva" target="_blank">
+                                Fazer Reserva
                             </a>
                             </div>
                             <div class="col-5">
@@ -457,7 +457,7 @@
                 
                 <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaEndereco">Revisar pedido</a>
                 
-                <a  class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaResumo">Enviar Pedido</a>
+                <a  href="#" class="btn btn-yellow float-right btn-float-modal hidden" id="btnEtapaResumo" target="_blank">Enviar Pedido</a>
 
                 <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right btn-float-modal hidden" id="btnVoltar">Voltar</a>
             </div>

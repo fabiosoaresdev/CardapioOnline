@@ -8,6 +8,7 @@ var MEU_CARRINHO = []
 var MEU_ENDERECO = null
 var VALOR_CARRINHO = 0
 var VALOR_ENTREGA = 7
+CELULAR_EMPRESA = '557592131117'
 cardapio.eventos = {
  init: () => {
     cardapio.metodos.obterItensCardapio()
@@ -50,6 +51,10 @@ cardapio.metodos = {
         $(".container-menu a").removeClass('active')
         // seta o menu para ativo
         $("#menu-" + categoria).addClass('active')
+
+        cardapio.metodos.carregarBotaoReserva()
+        cardapio.metodos.carregarBotaoLigar()
+        cardapio.metodos.carregarBotaoWhatsapp()
     },
 
     // clique no botão ver mais
@@ -345,28 +350,28 @@ cardapio.metodos = {
 
     //Validação antes de prosseguir para a etapa 3
     resumoPedido: () => {
-        let cep = $("#txtCEP").val().trim()
-        let endereco = $("#txtEndereco").val().trim()
-        let bairro = $("#txtBairro").val().trim()
-        let cidade = $("#txtCidade").val().trim()
-        let uf = $("#ddlUf").val().trim()
-        let numero = $("#txtNumero").val().trim()
-        let complemento = $("#txtComplemento").val().trim()
-
-        if (cep.length <= 0) {
-            cardapio.metodos.mensagem("Por gentileza, informe o CEP:")
-            $("#txtCEP").focus()
-            return;
-        }
-
-        if (endereco.length <= 0) {
-            cardapio.metodos.mensagem("Por gentileza, informe o Endereço:")
-            $("#txtEndereco").focus()
-            return;
-        }
-
-        if (bairro.length <= 0) {
-            cardapio.metodos.mensagem("Por gentileza, informe o Bairro:")
+    let cep = $("#txtCEP").val().trim()
+    let endereco = $("#txtEndereco").val().trim()
+    let bairro = $("#txtBairro").val().trim()
+    let cidade = $("#txtCidade").val().trim()
+    let uf = $("#ddlUf").val().trim()
+    let numero = $("#txtNumero").val().trim()
+    let complemento = $("#txtComplemento").val().trim()
+    
+    if (cep.length <= 0) {
+        cardapio.metodos.mensagem("Por gentileza, informe o CEP:")
+        $("#txtCEP").focus()
+        return;
+    }
+    
+    if (endereco.length <= 0) {
+        cardapio.metodos.mensagem("Por gentileza, informe o Endereço:")
+        $("#txtEndereco").focus()
+        return;
+    }
+    
+    if (bairro.length <= 0) {
+        cardapio.metodos.mensagem("Por gentileza, informe o Bairro:")
             $("#txtBairro").focus()
             return;
         }
@@ -376,19 +381,19 @@ cardapio.metodos = {
             $("#txtCidade").focus()
             return;
         }
-
+        
         if (uf == -1) {
             cardapio.metodos.mensagem("Por gentileza, informe a uf:")
             $("#ddlUf").focus()
             return;
         }
-
+        
         if (numero.length <= 0) {
             cardapio.metodos.mensagem("Por gentileza, informe o Número da residência:")
             $("#txtNumero").focus()
             return;
         }
-
+        
         MEU_ENDERECO = {
             cep: cep,
             endereco: endereco,
@@ -401,32 +406,93 @@ cardapio.metodos = {
         cardapio.metodos.carregarEtapa(3)
         cardapio.metodos.carregarResumo()
     },
-
+    
     //Carrega a etapa de resumo do carrinho
     carregarResumo: () => {
         $("#listaItensResumo").html('')
-
+        
         $.each(MEU_CARRINHO, (i,e) =>  {
             let temp = cardapio.templates.itemResumo.replace(/\${img}/g, e.img)
-                .replace(/\${name}/g, e.name)
-                .replace(/\${price}/g, e.price.toFixed(2).replace('.' , ','))
-                .replace(/\${qntd}/g, e.qntd);
-
+            .replace(/\${name}/g, e.name)
+            .replace(/\${price}/g, e.price.toFixed(2).replace('.' , ','))
+            .replace(/\${qntd}/g, e.qntd);
+            
                 $("#listaItensResumo").append(temp)
         })
 
         $("#resumoEndereco").html(`${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`)
         $("#cidadeEndereco").html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`)
+        
+        cardapio.metodos.finalizarPedido()
     },
 
-    mensagem: (texto, cor = 'red', tempo = 3500) => {
+    finalizarPedido: () => {
+        if (MEU_CARRINHO.length > 0 && MEU_ENDERECO != null) {
+            var itens = '';
+    
+            var texto = 'Olá! Gostaria de fazer um pedido:';
+            
+            $.each(MEU_CARRINHO, (i, e) => {
+                itens += `*${e.qntd}x* ${e.name} ....... R$ ${e.price.toFixed(2).replace('.',',')} \n`;
+            });
+    
+            texto += `\n*Itens do pedido:* \n\n${itens}`;
+            texto += `\n*Endereço de entrega:*`;
+            texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
+            texto += `\n${MEU_ENDERECO.cidade},-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`;
+            texto += `\n\n*Total (Com Entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.',',')}*`;
+    
+            console.log(texto);
+        }
 
+        let encode = encodeURI(texto)
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`
+
+        $("#btnEtapaResumo").attr('href', URL)
+    
+    },
+
+    //Carrega o link do botão reserva
+    carregarBotaoReserva: () => {
+        var texto = 'Olá! Gostaria de fazer uma *Reserva.*'
+
+        let encode = encodeURI(texto)
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`
+
+        $("#btnReserva").attr('href', URL)
+    },
+
+    //Carrega o botão de ligar
+    carregarBotaoLigar: () => {
+        $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`)
+    },
+
+    carregarBotaoWhatsapp: () => {
+        $("#btnWhatsapp").attr('href', `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`)
+    },
+
+    abrirDepoimento: (depoimento) => {
+        $("#depoimento1").addClass('hidden')
+        $("#depoimento2").addClass('hidden')
+        $("#depoimento3").addClass('hidden')
+
+        $("#btnDepoimento1").removeClass('active')
+        $("#btnDepoimento2").removeClass('active')
+        $("#btnDepoimento3").removeClass('active')
+
+        $("#depoimento" + depoimento).removeClass('hidden')
+        $("#btnDepoimento" + depoimento).addClass('active')
+    },
+
+    
+    mensagem: (texto, cor = 'red', tempo = 3500) => {
+        
         let id = Math.floor(Date.now() * Math.random()).toString();
         
         let msg = `<div id="msg-${id}" class="animated fadeInDown toast ${cor}">${texto}</div>`;
         
         $("#containerMensagens").append(msg);
-
+        
         setTimeout(() => {
             $("#msg-" + id).removeClass('fadeInDown');
             $("#msg-" + id).addClass('fadeOutUp');
@@ -438,14 +504,14 @@ cardapio.metodos = {
 }
 
 cardapio.templates = {
-
+    
     item: `
     <div class="col-3 mb-5">
-        <div class="card card-item" id="\${id}">
-            <div class="img-produto">
-                <img src="\${img}">
-            </div>
-            <p class="title-produto text-center mt-4">
+    <div class="card card-item" id="\${id}">
+    <div class="img-produto">
+    <img src="\${img}">
+    </div>
+    <p class="title-produto text-center mt-4">
                 <strong>\${name}</strong>
             </p>
             <p class="price-produto text-center">
