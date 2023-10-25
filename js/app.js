@@ -468,7 +468,12 @@ cardapio.metodos = {
     },
 
     carregarBotaoWhatsapp: () => {
-        $("#btnWhatsapp").attr('href', `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`)
+        var texto = 'Olá! Gostaria de conhecer os seus serviços'
+
+        let encode = encodeURI(texto)
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`
+
+        $("#btnWhatsapp").attr('href', URL)
     },
 
     abrirDepoimento: (depoimento) => {
