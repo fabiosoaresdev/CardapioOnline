@@ -2,14 +2,17 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu On-line</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">  
+    <link rel="stylesheet" href="css/mediaquery.css">  
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
 
 </head>
 <body>
@@ -24,11 +27,11 @@
     </a>
     <header>
         <div class="container">
-            <nav class="navbar navbar-expand-lg pl-0 pr-0">
-                <a href="#" class="navbar-brand">
+            <nav class="navbar navbar-expand-lg pl-0 pr-0 col-one">
+                <a href="#" class="navbar-brand animated flip">
                     <img src="img/logo.png" alt="logo" width="160px" class="img-logo" id="logoSite">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNavDropdown">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
                     <span class="navbar-toggler-icon">
                         <i class="fas fa-bars"></i>
                     </span>
@@ -36,24 +39,26 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ml-auto mr-auto">
                         <li class="nav-item"><a href="#reserva" class="nav-link"><strong>Reservas</strong></a></li>
-                        <li class="nav-item"><a href="#servicos" class="nav-link"><Strong>Serviços</Strong></a></li>
+                        <li class="nav-item"><a href="#servicos" class="nav-link"><strong>Serviços</strong></a></li>
                         <li class="nav-item"><a href="#cardapio" class="nav-link"><strong>Cardápio</strong></a></li>
                         <li class="nav-item"><a href="#depoimentos" class="nav-link"><strong>Depoimentos</strong></a></li>
                     </ul>
-                    <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
+                    <a class="btn btn-white btn-icon " onclick="cardapio.metodos.abrirCarrinho(true)">
                         Meu Carrinho <span class="icon"><div class="container-total-carrinho badge-total-carrinho hidden">0</div>
                         <i class="fas fa-shopping-bag"></i></span>
-                    </a>                    
+                    </a>    
+                    <button class="btn btn-yellow btn-noturne-mode" id="btnDarkMode"><i class="fas fa-cloud-sun"></i></button>                
                 </div>
-                <button class="btn btn-yellow" id="btnDarkMode"><i class="fas fa-cloud-sun"></i></button>
+                
             </nav>
+            
         </div>
     </header>
     
     <section class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12 col-one">
                     <div class="d-flex text-banner">
                         <h1><strong>Escolha Sua Comida</strong> <strong class="color-primary">Favorita.</strong></h1>
                         <p>Aproveite nosso cardapio Escolha o que desejar e receba em sua casa de forma rapida é segura</p>
@@ -75,7 +80,8 @@
                         <a href="https://wa.me/5575992131117" class="btn btn-sm btn-white btn-social mt-4" target="_blank"><i class="fab fa-whatsapp" id="btnWhatsapp"></i></a>
                     </div>
                 </div>
-                <div class="col-6">
+
+                <div class="col-6 no-mobile">
                     <div class="card-banner"></div>
                     <div class="d-flex img-banner">
                         <img src="img/hamburguer.png" alt="hamburguer">
@@ -101,7 +107,7 @@
                         <strong>Como São Nossos Serviços?</strong>
                     </h1>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-mb-4 col-sm-12 col-one mb-5 wow fadeInUp">
                     <div class="card-icon text-center">
                         <img src="img/icone-pedido.svg" width="150" alt="">
                     </div>
@@ -110,7 +116,7 @@
                         <span>Você só precisa de alguns passos simples para pedir a sua comida</span>
                     </div>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="ol-12 col-lg-4 col-mb-4 col-sm-12 col-one mb-5 wow fadeInUp">
                     <div class="card-icon text-center">
                         <img src="img/icone-delivery.svg" width="250" alt="">
                     </div>
@@ -119,7 +125,7 @@
                         <span>Nossa entrega é sempre pontual, rápida e segura.</span>
                     </div>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="ol-12 col-lg-4 col-mb-4 col-sm-12 col-one mb-5 wow fadeInUp">
                     <div class="card-icon text-center">
                         <img src="img/icone-qualidade.svg" width="250" alt="">
                     </div>
@@ -138,10 +144,10 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                <span class="hint-title"><strong>Cardápio</strong></span>
+                <div class="col-12 col-one text-center mb-5  wow fadeInUp">
+                <span class="hint-title col-one cardapio"><strong>Cardápio</strong></span>
                 <h1 class="title"><strong>Conheça Nosso Cardápio.</strong></h1>
-            </div>
+                </div>
                 <div class="col-12 container-menu">
                     <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
                         <i class="fas fa-hamburger"></i> Burguers
@@ -162,14 +168,14 @@
                         <i class="fas fa-ice-cream"></i> Sobremesas
                     </a>
                 </div>
-                <div class="col-12">
+                <div class="col-12 col-one itens-cardapio">
                     <div class="row" id="itensCardapio">
                         
                         
                     </div>
                 </div>
-                <div class="col-12 text-center">
-                    <button id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()">Ver mais</button>
+                <div class="col-12 col-one text-center">
+                    <button id="btnVerMais" class="btn btn-white btn-sm btn-ver-mais" onclick="cardapio.metodos.verMais()">Ver mais</button>
                 </div>
             </div>
         </div>
@@ -179,11 +185,11 @@
         <div class="background-depoimentos"></div>
         <div class="container">
             <div class="row">
-                <div class="col-5 text-center">
+                <div class="col-5 text-center no-mobile">
                     <div class="card-depoimentos"></div>
                     <div class="d-flex img-banner"><img src="img/pizzas.png" alt="pizzas"></div>
                 </div>
-                <div class="col-7 depoimentos-gerais">
+                <div class="col-12 col-lg7 col-md-7 col-sm-12  depoimentos-gerais">
                     <span class="hint-title"><strong>Depoimentos</strong></span>
                     <h1 class="title">O que dizem sobre nós?</h1>
                     <div class="mb-5">
@@ -261,10 +267,10 @@
     <section class="reserva" id="reserva">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-one">
                     <div class="card-secondary">
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-12 col-lg-7 col-md-7 col-sm-12">
                                 <span class="hint-title"><strong>Reserva</strong></span>
                                 <h1 class="title-container-reserva"><strong>Quer reservar um horário?</strong></h1>
                                 <p class="pr-5">Mande uma mensagem clicando no botão abaixo! Reserve sua data e horário de forma simples e rápida.</p>
@@ -272,7 +278,7 @@
                                 Fazer Reserva
                             </a>
                             </div>
-                            <div class="col-5">
+                            <div class="col-5 no-mobile">
                                 <div class="card-reserva"></div>
                                 <div class="d-flex img-banner">
                                     <img src="img/icone-reserva.svg" alt="">
@@ -288,13 +294,15 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-3 container-logo-footer">
+                <div class="col-12 col-lg-3 col-mb-3 col-sm-12 container-logo-footer">
                     <img src="img/logo.png" alt="logo-footer" class="logo-footer" id="logoSiteFooter">
                 </div>
-                <div class="col-5 container-texto-footer">
+
+                <div class="col-12 col-lg-5 col-mb-5 col-sm-12 container-texto-footer">
                     <p><strong>Menu On-Line</strong> &copy; Todos os direitos reservados</p>
                 </div>
-                <div class="col-4 container-redes-footer">
+                
+                <div class="col-12 col-lg-4 col-mb-4 col-sm-12 container-redes-footer">
                     <div class="social">
                         <a href="https://www.instagram.com/_fabiosooares_/" class="btn btn-sm btn-white btn-social mr-3" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://github.com/fabiosoaresdev" class="btn btn-sm btn-white btn-social mr-3" target="_blank"><i class="fab fa-github"></i></a>

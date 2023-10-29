@@ -1,0 +1,246 @@
+/* Desktop (col-lg)992+ */
+@media (min-width: 992px) {
+    
+}
+
+/* Desktop e Tablets (col-md) 768px a 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+}
+
+/* Tablets (Col-sm) 576px a 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+    
+}
+
+/* Tablets e Smartphones (col) 0px a 767px */
+@media (max-width: 767px) {
+
+    .no-mobile{
+        display: none;
+    }
+
+    .col-one{
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+    }
+
+    .menu {
+        padding-bottom: 10px;
+    }
+
+    .navbar .navbar-toggler{
+        right: 50px; 
+    }
+
+    .navbar-toggler-icon {
+        padding-top: 5px;
+    }
+
+    .navbar-collapse {
+        background-color: var(--color-secondary);
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        border-radius: 40px;
+    }
+
+    .navbar-collapse .btn-white {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .navbar-collapse .btn-icon{
+        padding-right: 20px !important;
+        margin-left: 0%;
+        margin-right: 5px;
+
+    }
+
+    .navbar-collapse .btn-icon span.icon {
+        display: none;
+    }
+
+    .btn-noturne-mode {
+        text-align: center;
+        align-items: center;
+        margin-left: 0%;
+
+    }
+    
+    /* BANNER */
+    .banner {
+        padding-top: 20px;
+        padding-bottom: 50px;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .text-banner h1 {
+        font-size: 36px;
+    }
+
+    .text-banner p {
+        font-size: 16px;
+    }
+
+    .btn-yellow, .btn-white {
+        padding: 13px 23px;
+        font-size: 18px;
+    }
+
+    .btn-yellow .btn-ver-cardapio{
+        margin-left: 0%;
+    }
+
+    .btn-icon-left span.btn-icon-left {
+        width: 43px;
+        height: 43px;
+        margin-left: -60px;
+        margin-bottom: -10px;
+    }
+
+    .btn-icon-left {
+        padding-left: 70px!important;
+        margin-left: 0px;
+    }
+
+    .social .btn-social{
+        margin-top: 10px;
+        margin-bottom: 90px;
+    }
+
+    .servicos {
+        margin-bottom: -150px;
+    }
+    /* Cardápio */
+    .container-menu{
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        padding-top: 200px;
+        margin-top: -200px;
+        justify-content: left;  
+        padding-bottom: 1px;
+    }
+
+    .itens-cardapio { 
+        margin-top: 30px;
+    }
+
+    .img-produto {
+        position: absolute;
+        left: 15px;
+    }
+
+    .card-item {
+        height: 110px;
+        padding-left: 110px;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .card-item .img-produto img {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .card-item:hover .img-produto img {
+        width: 90px;
+        margin-bottom: 10px;
+    }
+
+    .card-item .title-produto{
+        position: absolute;
+        top: -2px;
+        margin-left: 10px;
+        width: 200px;
+        transition: 1s;
+        text-align: left!important;
+    }
+
+    .card-item:hover .title-produto{
+        position: absolute;
+        top: -15px;
+        transition: 1s;
+    }
+
+    .card-item .price-produto{
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+
+    .card-item .add-carrinho {
+        margin-left: 10px;
+    }
+
+    /* Depoimentos */
+
+    .depoimentos {
+        padding: 50px;
+        margin-top: 10px;
+    }
+
+    .depoimentos .depoimentos-gerais {
+        align-items: center;
+        text-align: center;
+    }
+
+    .texto-depoimento i:first-child {
+        padding-right: 15px;
+    }
+    
+    .texto-depoimento i:last-child {
+        padding-left: 15px;
+    }
+
+    /* Reserva */
+    .reserva {
+        padding-bottom: 50px;
+    }
+
+    .card-secondary {
+        padding: 45px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* footer */
+
+    .container-logo-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo-footer{
+        margin-bottom: -20px;
+    }
+
+    .container-redes-footer .btn-yellow{
+        padding: 10px 15px;
+        font-size: 20px;
+        margin-top: 60px;
+        margin-bottom: -20px;
+    }
+
+    .container-redes-footer{
+        padding-top: 40px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+   
+    }
+
+    .container-redes-footer .btn-social{
+        margin-bottom: 50px;
+    }
+
+    .container-texto-footer{
+        padding-top: -20px;
+    }
+    
+    
+}

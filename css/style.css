@@ -350,8 +350,8 @@ a.navbar-brand {
 
 .card-item .title-produto{
     color: var(--color-black);
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    text-overflow: ellipsis!important;
+    white-space: nowrap!important;
     overflow: hidden;
     height: 40px;
     margin-bottom: 0px;
@@ -912,6 +912,15 @@ select::-webkit-scrollbar-track {
 /* MODO DARK */
 body.dark {
     background-color: var(--color-black); 
+    transition: 1.5s;
+}
+
+.dark .navbar-toggler-icon{
+    color: var(--color-background);
+}
+
+.dark .navbar-collapse {
+    background-color: var(--color-black-heavy)!important;
     transition: 1.5s;
 }
 
