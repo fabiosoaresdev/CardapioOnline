@@ -436,11 +436,14 @@ cardapio.metodos = {
                 itens += `*${e.qntd}x* ${e.name} ....... R$ ${e.price.toFixed(2).replace('.',',')} \n`;
             });
     
+            texto+= `\n -------------------------------------`;
             texto += `\n*Itens do pedido:* \n\n${itens}`;
             texto += `\n*Endereço de entrega:*`;
             texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
             texto += `\n${MEU_ENDERECO.cidade},-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`;
-            texto += `\n\n*Total (Com Entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.',',')}*`;
+            texto+= `\n -------------------------------------`;
+            texto += `\n*TOTAL (Com Entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.',',')}*`;
+            texto+= `\n -------------------------------------`;
     
             console.log(texto);
         }
@@ -511,7 +514,7 @@ cardapio.metodos = {
 cardapio.templates = {
     
     item: `
-    <div class="col-12 col-lg-3 col-md-3 col-sm-6 mb-5">
+    <div class="col-12 col-lg-3 col-md-3 col-sm-6 mb-5 animated fadeInUp">
         <div class="card card-item" id="\${id}">
             <div class="img-produto">
                 <img src="\${img}">
@@ -545,7 +548,7 @@ cardapio.templates = {
                 <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"><i class="fas fa-minus"></i></span>
                 <span class="add-numero-de-itens" id="qntd-carrinho\${id}">\${qntd}</span>
                 <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></span>
-                <span class="btn btn-remove" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fas fa-times"></i></span>
+                <span class="btn btn-remove no-mobile" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fas fa-times"></i></span>
             </div>
         </div>`,
 

@@ -242,5 +242,80 @@
         padding-top: -20px;
     }
     
+
+    /* Modal */
+
+    .etapa {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        position: relative;
+    }
+
+    .etapa::before {
+        margin-right: 50px;
+    }
+
+    .modal-full{
+        padding: 45px;
+    }
+
+    .modal-full .item-carrinho{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .modal-full .img-produto {
+        position: relative;
+        left: 0
+        ;
+    }
+
+    .modal-full .img-produto img {
+        width: 50px;
+    }
+
+    .modal-full .dados-produto{
+        padding-left: 15px;
+        padding-right: 15px;
+        display: grid;
+    }
+
+    .modal-full .title-produto, .modal-full .price-produto {
+        font-size: 16px!important;
+    }
+
+    .modal-full .add-numero-itens {
+        padding: 2px 10px;
+    }
+
+    .container-cep .btn-yellow-find {
+        font-size: 15px;
+        top: 28px;
+    }
+
+    .modal-full .form-control {
+        font-size: 16px;
+    }
+
+    .btn-voltar-modal{
+        position: absolute;
+        padding: 15px;
+        left: 30px;
+    }
+
+    .btn-etapa-endereco{
+        position: absolute;
+        padding: 15px;
+        right: 30px;
+        margin-bottom: 20px;  
+    }
     
+    .btn-etapa-resumo{
+        position: absolute;
+        padding: 15px;
+        right: 30px;
+        margin-bottom: 20px;
+    }
+
 }
